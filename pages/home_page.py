@@ -17,25 +17,21 @@ class HomePage(BasePage):
     PRODUCT_PRICES = By.CLASS_NAME, "price"
     CART_PAGE = By.CSS_SELECTOR, '#header-cart-icon > svg'
     APARAT_FOTO_PAGE = By.LINK_TEXT, 'Aparat foto'
-    COMPARARE_CHECKBOX = By.XPATH, '//*[@id="product-list"]/div[3]/div[1]/div[1]/div[1]/div[2]/a/span[1]'
+    COMPARARE_CHECKBOX = By.XPATH, '//*[@id="product-list"]/div[4]/div[3]/div[1]/div[1]/div[2]/a/span[1]'
     COMPARATIE_BUTTON = By.ID, 'header-button-comparison'
     SELECTED_PRODUCT = By.CLASS_NAME, 'product-wrapper'
 
     def navigate_to_home_page(self):
         self.go_to(self.HOME_PAGE_URL)
         self.driver.maximize_window()
-        sleep(2)
 
     """@Search1"""
     def click_search_bar(self):
         self.click(self.SEARCH_BAR)
-        sleep(2)
     def search_for_products(self, text):
         self.type(self.SEARCH_BAR, text)
-        sleep(2)
     def click_search_button(self):
         self.click(self.SEARCH_BUTTON)
-        sleep(2)
     def check_product_quantity(self):
         found_products = self.find_multiple(self.PRODUCTS)
         return len(found_products)
@@ -43,19 +39,15 @@ class HomePage(BasePage):
     """@Filter"""
     def click_mobile(self):
         self.click(self.MOBILE_TAB)
-        sleep(2)
     def click_value(self):
         self.click(self.PRICE_VALUE)
-        sleep(2)
     def set_min_value(self, text):
         self.type(self.MIN_VALUE, text)
-        sleep(2)
     def set_max_value(self, text):
         self.type(self.MAX_VALUE, text)
-        sleep(2)
     def click_ok_button(self):
         self.click(self.OK_BUTTON)
-        sleep(2)
+        sleep(5)
     def check_product_prices(self):
         product_prices_text = [price.text for price in self.find_multiple(self.PRODUCT_PRICES)]
         prices_list = [re.sub(r'[^\d,]', '', item) for item in product_prices_text if item.strip()]
@@ -65,7 +57,6 @@ class HomePage(BasePage):
     """@Test_URL"""
     def click_cart_page(self):
         self.click(self.CART_PAGE)
-        sleep(2)
 
     def test_url(self,):
         current_url = self.current_url()
@@ -74,13 +65,10 @@ class HomePage(BasePage):
     """@Comparatie"""
     def click_aparat_foto_page(self):
         self.click(self.APARAT_FOTO_PAGE)
-        sleep(2)
     def check_comparare(self):
         self.check_checkbox(self.COMPARARE_CHECKBOX)
-        sleep(2)
     def click_comparatie(self):
         self.click(self.COMPARATIE_BUTTON)
-        sleep(2)
+        # sleep(1)
     def is_selected_product_displayed(self):
         assert self.is_element_displayed(self.SELECTED_PRODUCT)
-        sleep(2)

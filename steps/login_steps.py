@@ -6,12 +6,12 @@ def step_impl(context):
     context.login_page.navigate_to_login_page()
 
 """@Login1"""
-@when('I insert an unregistered email in the mail input')
-def step_impl(context):
-    (context.login_page.set_unregistred_email("email_neinregistrat@host.com"))
-@when('I insert a password in the password input')
-def step_impl(context):
-    context.login_page.set_password("password")
+@when('I insert an unregistered email "{user}" in the mail input')
+def step_impl(context, user):
+    (context.login_page.set_unregistred_email(user))
+@when('I insert a password "{pwd}"in the password input')
+def step_impl(context, pwd):
+    context.login_page.set_password(pwd)
 @when('I click on the login button')
 def step_impl(context):
     context.login_page.click_login_button()

@@ -4,15 +4,12 @@ from behave import *
 @given('I am on the "Philips EP2236/40" Page')
 def step_impl(context):
     context.cart_page.navigate_to_product_page()
-@when('I click on the expand button')
+@when('I click on the first "Cumpara" button')
 def step_impl(context):
-    context.cart_page.click_expand_button()
-@when('I click on the "Negru" option')
+    context.cart_page.click_first_cumpara_button()
+@when('I click on the second "Cumpara" button')
 def step_impl(context):
-    context.cart_page.click_negru_option()
-@when('I click on the "Cumpara" button')
-def step_impl(context):
-    context.cart_page.click_cumpara_button()
+    context.cart_page.click_second_cumpara_button()
 @when('I click on the "Spre cos" button')
 def step_impl(context):
     context.cart_page.click_spre_cos_button()

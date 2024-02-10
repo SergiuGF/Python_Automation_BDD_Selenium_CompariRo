@@ -26,7 +26,7 @@ Feature: Test the functionality of the Home Page and of the associated functions
 
     @Comparatie
    Scenario: Check the functionality of the "Comparatie" button
-     When I click on the "Aparat foto" button
-     When I check "Comparare" checkbox in the first product tab
-     When I click on the "Comparatie" button
-     Then The selected product is displayed
+      When I click on the "Aparat foto" button
+      When I click "Comparare" checkbox
+      When I click on the "Comparatie" button
+      Then The selected product is displayed

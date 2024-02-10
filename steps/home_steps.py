@@ -52,7 +52,7 @@ def step_impl(context):
 @when('I click on the "Aparat foto" button')
 def step_impl(context):
     context.home_page.click_aparat_foto_page()
-@when('I check "Comparare" checkbox in the first product tab')
+@when('I click "Comparare" checkbox')
 def step_impl(context):
     context.home_page.check_comparare()
 @when('I click on the "Comparatie" button')
