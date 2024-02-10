@@ -1,5 +1,11 @@
+from telnetlib import EC
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 from driver import Driver
 
 
@@ -30,3 +36,5 @@ class BasePage(Driver):
             self.click(checkbox_locator)
     def current_url(self):
         return self.driver.current_url
+    def wait_for_elemement(self, by, selector):
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((by, selector)))

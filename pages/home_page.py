@@ -34,7 +34,7 @@ class HomePage(BasePage):
         self.click(self.SEARCH_BUTTON)
     def check_product_quantity(self):
         found_products = self.find_multiple(self.PRODUCTS)
-        return len(found_products)
+        assert len(found_products) >=10
 
     """@Filter"""
     def click_mobile(self):
@@ -47,20 +47,21 @@ class HomePage(BasePage):
         self.type(self.MAX_VALUE, text)
     def click_ok_button(self):
         self.click(self.OK_BUTTON)
-        sleep(5)
+        sleep(2)
     def check_product_prices(self):
         product_prices_text = [price.text for price in self.find_multiple(self.PRODUCT_PRICES)]
         prices_list = [re.sub(r'[^\d,]', '', item) for item in product_prices_text if item.strip()]
         prices_list_int = [int(item.split(',')[0]) for item in prices_list]
-        return prices_list_int
+        for price in prices_list_int:
+            assert price >= 1000 and price <= 2000
 
     """@Test_URL"""
     def click_cart_page(self):
         self.click(self.CART_PAGE)
 
-    def test_url(self,):
+    def test_url(self,expected_URL):
         current_url = self.current_url()
-        return current_url
+        assert current_url == expected_URL
 
     """@Comparatie"""
     def click_aparat_foto_page(self):
@@ -69,6 +70,7 @@ class HomePage(BasePage):
         self.check_checkbox(self.COMPARARE_CHECKBOX)
     def click_comparatie(self):
         self.click(self.COMPARATIE_BUTTON)
-        # sleep(1)
     def is_selected_product_displayed(self):
+        self.wait_for_elemement(By. CLASS_NAME,'product-wrapper')
+        self.click(self.SELECTED_PRODUCT)
         assert self.is_element_displayed(self.SELECTED_PRODUCT)

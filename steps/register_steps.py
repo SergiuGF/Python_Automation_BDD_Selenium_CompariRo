@@ -31,7 +31,7 @@ def step_impl(context):
     context.register_page.error_message_is_displayed()
 @then('Email error text contains "Completarea campului este obligatorie!" message')
 def step_impl(context):
-    context.register_page.get_error_message_text()
+    context.register_page.is_error_message_correct()
 
 """@Register3"""
 @when("I set a new email - Scenario 3")
@@ -48,4 +48,4 @@ def step_impl(context):
     context.register_page.error_message_is_displayed()
 @then('Password error text contains "Completarea campului este obligatorie!" message')
 def step_impl(context):
-    context.register_page.get_error_message_text()
+    context.register_page.is_error_message_correct()

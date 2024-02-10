@@ -18,9 +18,9 @@ def step_impl(context):
 @then('The error message is displayed')
 def step_impl(context):
     context.login_page.is_error_message_displayed()
-@then('The error message contains "{message}" message')
-def step_impl(context, message):
-    assert message in context.login_page.get_error_message_text()
+@then('The error message contains "{text}" message')
+def step_impl(context, text):
+    context.login_page.is_error_message_correct(text)
 
 """@Login2"""
 @when('I insert " " in the mail input')
@@ -34,7 +34,7 @@ def step_impl(context):
     context.login_page.is_error_message_displayed()
 @then('Email error text contains "{message}" message - Scenario 2')
 def step_impl(context, message):
-    assert message in context.login_page.get_error_message_text()
+    context.login_page.is_error_message_correct(message)
 
 """@Login3"""
 @when('I insert an valid email in the mail input')
@@ -46,6 +46,6 @@ def step_impl(context):
 @when('I click on the login button - Scenario 3')
 def step_impl(context):
     context.login_page.click_login_button()
-@then('I am redirected to account page')
-def step_impl(context):
-    assert context.home_page.test_url() == "https://www.compari.ro/users/452083/#settings-account"
+@then('I am redirected to account page "{account_page}"')
+def step_impl(context, account_page):
+    context.login_page.test_url_account(account_page)

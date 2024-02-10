@@ -17,7 +17,7 @@ def step_impl(context):
     context.home_page.click_search_button()
 @then('At least 10 products are displayed')
 def step_impl(context):
-    assert context.home_page.check_product_quantity() >= 10
+    context.home_page.check_product_quantity()
 
 """@Filter"""
 @when('I click on the "Telefoane mobile" - under "Electronice" tab')
@@ -37,16 +37,15 @@ def step_impl(context):
     context.home_page.click_ok_button()
 @then('All products displayed are between 1000 and 2000 lei')
 def step_impl(context):
-    for price in context.home_page.check_product_prices():
-        assert price >= 1000 and price <= 2000
+    context.home_page.check_product_prices()
 
 """@Test_URL"""
 @when('I click on the Cart button')
 def step_impl(context):
     context.home_page.click_cart_page()
-@then('I am redirected to the Cart Page "https://checkout.compari.ro/"')
-def step_impl(context):
-    assert context.home_page.test_url() == "https://checkout.compari.ro/"
+@then('I am redirected to the Cart Page "{expected_URL}"')
+def step_impl(context, expected_URL):
+    context.home_page.test_url(expected_URL)
 
 """@Comparatie"""
 @when('I click on the "Aparat foto" button')

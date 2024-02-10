@@ -9,6 +9,7 @@ class LoginPage(BasePage):
     PASSWORD_INPUT = (By.NAME, "password")
     LOGIN_BUTTON = (By.ID, "login-submit")
     ERROR_MESSAGE = (By.CLASS_NAME, "error-message")
+    CONTUL_MEU = (By.NAME, 'settings-account')
 
     def navigate_to_login_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)
@@ -23,8 +24,8 @@ class LoginPage(BasePage):
         self.click(self.LOGIN_BUTTON)
     def is_error_message_displayed(self):
         assert self.is_element_displayed(self.ERROR_MESSAGE)
-    def get_error_message_text(self):
-        return self.get_text(self.ERROR_MESSAGE)
+    def is_error_message_correct(self, text):
+        assert text in self.get_text(self.ERROR_MESSAGE)
 
     """@Login2"""
     def set_empty_email(self, text):
@@ -37,9 +38,13 @@ class LoginPage(BasePage):
     def set_valid_password(self, text):
         self.type(self.PASSWORD_INPUT, text)
     # Third step is the same as in the previous scenario (click_login_button)
-    def test_url(self):
+    def test_url_account(self, account_page):
+        self.wait_for_elemement(By.NAME, 'settings-account')
         current_url = self.current_url()
-        return current_url
+        assert account_page == current_url
+        # assert text in self.get_text(self.ERROR_MESSAGE)
+        #
+        # return current_url
 
 
 

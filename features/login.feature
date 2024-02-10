@@ -30,4 +30,4 @@ Feature: Test the functionality of the Login Page
      When I insert an valid email in the mail input
      When I insert an valid password in the password input
      When I click on the login button - Scenario 3
-     Then I am redirected to account page
+     Then I am redirected to account page "https://www.compari.ro/users/452083/#settings-account"
