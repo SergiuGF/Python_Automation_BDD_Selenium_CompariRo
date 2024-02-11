@@ -1,6 +1,5 @@
 from behave import *
 
-
 @given('I am on the Login Page')
 def step_impl(context):
     context.login_page.navigate_to_login_page()

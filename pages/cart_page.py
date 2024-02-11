@@ -5,10 +5,10 @@ from time import sleep
 
 class CarPage(BasePage):
     PRODUCT_PAGE = "https://www.compari.ro/cafetiere-filtre-de-cafea-c3174/philips/ep2236-40-p590842329/"
-    EXPAND_BUTTON = By.XPATH, '//*[@id="micro-data"]/div[3]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/a[2]'
-    NEGRU_OPTION = By.XPATH, '//*[@id="micro-data"]/div[3]/div[2]/div[2]/table/tbody/tr/td[3]'
-    FIRST_CUMPARA_BUTTON = By.XPATH, '//*[@id="micro-data"]/div[3]/div[2]/div[2]/div[3]/div[1]/a'
-    SECOND_CUMPARA_BUTTON = By.XPATH, '//*[@id="off-screen-container"]/div[2]/div/div/div[2]/div[4]/a[1]/span'
+    EXPAND_BUTTON = By.ID, 'c__expand_btn'
+    NEGRU_OPTION = By.CLASS_NAME, 'c-black__option'
+    FIRST_CUMPARA_BUTTON = By.XPATH, "(//*[contains(@class, 'add-to-cart')])[3]"
+    SECOND_CUMPARA_BUTTON = By.XPATH, "(//*[contains(@class, 'add-to-cart')])[last()]"
     SPRE_COS_BUTTON = By.CLASS_NAME, 'c-cart-confirm__button--cart'
     PRODUCT = By.CLASS_NAME, 'c-card__product'
 

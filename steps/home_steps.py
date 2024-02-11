@@ -1,6 +1,5 @@
 from behave import *
 
-
 @given('I am on the Home Page')
 def step_impl(context):
     context.home_page.navigate_to_home_page()
@@ -60,4 +59,3 @@ def step_impl(context):
 @then('The selected product is displayed')
 def step_impl(context):
     context.home_page.is_selected_product_displayed()
-

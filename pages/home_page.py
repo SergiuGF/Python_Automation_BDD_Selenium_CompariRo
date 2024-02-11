@@ -1,8 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from time import sleep
 import re
-
 
 class HomePage(BasePage):
     HOME_PAGE_URL = "https://www.compari.ro/"
@@ -17,7 +15,7 @@ class HomePage(BasePage):
     PRODUCT_PRICES = By.CLASS_NAME, "price"
     CART_PAGE = By.CSS_SELECTOR, '#header-cart-icon > svg'
     APARAT_FOTO_PAGE = By.LINK_TEXT, 'Aparat foto'
-    COMPARARE_CHECKBOX = By.XPATH, '//*[@id="product-list"]/div[4]/div[3]/div[1]/div[1]/div[2]/a/span[1]'
+    COMPARARE_CHECKBOX = By.XPATH, "(//*[contains(@class, 'compare-txt')])[1]"
     COMPARATIE_BUTTON = By.ID, 'header-button-comparison'
     SELECTED_PRODUCT = By.CLASS_NAME, 'product-wrapper'
 
@@ -47,8 +45,10 @@ class HomePage(BasePage):
         self.type(self.MAX_VALUE, text)
     def click_ok_button(self):
         self.click(self.OK_BUTTON)
-        sleep(2)
+
     def check_product_prices(self):
+        self.wait_for_element_visibility(By.CLASS_NAME, "price")
+        self.click(self.OK_BUTTON)
         product_prices_text = [price.text for price in self.find_multiple(self.PRODUCT_PRICES)]
         prices_list = [re.sub(r'[^\d,]', '', item) for item in product_prices_text if item.strip()]
         prices_list_int = [int(item.split(',')[0]) for item in prices_list]
@@ -59,7 +59,7 @@ class HomePage(BasePage):
     def click_cart_page(self):
         self.click(self.CART_PAGE)
 
-    def test_url(self,expected_URL):
+    def test_url(self, expected_URL):
         current_url = self.current_url()
         assert current_url == expected_URL
 
@@ -70,7 +70,7 @@ class HomePage(BasePage):
         self.check_checkbox(self.COMPARARE_CHECKBOX)
     def click_comparatie(self):
         self.click(self.COMPARATIE_BUTTON)
+
     def is_selected_product_displayed(self):
-        self.wait_for_elemement(By. CLASS_NAME,'product-wrapper')
-        self.click(self.SELECTED_PRODUCT)
+        self.wait_for_element_visibility(By.CLASS_NAME, 'product-wrapper')
         assert self.is_element_displayed(self.SELECTED_PRODUCT)

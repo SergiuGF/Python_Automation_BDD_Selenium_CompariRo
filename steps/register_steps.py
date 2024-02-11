@@ -1,6 +1,5 @@
 from behave import *
 
-
 @given("I am on the Register Page")
 def step_impl(context):
     context.register_page.navigate_to_register_page()

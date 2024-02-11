@@ -1,6 +1,5 @@
 from behave import *
 
-
 @given('I am on the "Philips EP2236/40" Page')
 def step_impl(context):
     context.cart_page.navigate_to_product_page()

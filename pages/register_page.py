@@ -1,8 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import random
-from time import sleep
-
 
 class RegisterPage(BasePage):
     REGISTER_PAGE_URL = "https://www.compari.ro/inregistrare/"

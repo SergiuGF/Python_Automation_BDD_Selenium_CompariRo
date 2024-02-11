@@ -1,11 +1,7 @@
-from telnetlib import EC
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-
 from driver import Driver
 
 
@@ -36,5 +32,12 @@ class BasePage(Driver):
             self.click(checkbox_locator)
     def current_url(self):
         return self.driver.current_url
-    def wait_for_elemement(self, by, selector):
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((by, selector)))
+    def wait_for_element_visibility(self, by, selector):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((by, selector)))
+
+    def wait_for_element_clickable(self, by, selector):
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="cf_pret"]/span[2]/a')))
+
+    def verify_element_is_not_displayed_by_selector(self, by, selector):
+        elem_list = self.driver.find_elements(by, selector)
+        self.assertEqual(len(elem_list), 0, 'Elem is incorrectly displayed')

@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from time import sleep
-
 
 class LoginPage(BasePage):
     LOGIN_PAGE_URL = "https://www.compari.ro/login/"
@@ -39,13 +37,6 @@ class LoginPage(BasePage):
         self.type(self.PASSWORD_INPUT, text)
     # Third step is the same as in the previous scenario (click_login_button)
     def test_url_account(self, account_page):
-        self.wait_for_elemement(By.NAME, 'settings-account')
+        self.wait_for_element_visibility(By.NAME, 'settings-account')
         current_url = self.current_url()
         assert account_page == current_url
-        # assert text in self.get_text(self.ERROR_MESSAGE)
-        #
-        # return current_url
-
-
-
-
