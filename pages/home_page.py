@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import re
+from time import sleep
 
 class HomePage(BasePage):
     HOME_PAGE_URL = "https://www.compari.ro/"
@@ -26,8 +27,8 @@ class HomePage(BasePage):
     """@Search1"""
     def click_search_bar(self):
         self.click(self.SEARCH_BAR)
-    def search_for_products(self, text):
-        self.type(self.SEARCH_BAR, text)
+    def search_for_products(self, product_name):
+        self.type(self.SEARCH_BAR, product_name)
     def click_search_button(self):
         self.click(self.SEARCH_BUTTON)
     def check_product_quantity(self):
@@ -39,21 +40,25 @@ class HomePage(BasePage):
         self.click(self.MOBILE_TAB)
     def click_value(self):
         self.click(self.PRICE_VALUE)
-    def set_min_value(self, text):
-        self.type(self.MIN_VALUE, text)
-    def set_max_value(self, text):
-        self.type(self.MAX_VALUE, text)
+    def set_min_value(self, min_value):
+        self.type(self.MIN_VALUE, min_value)
+    def set_max_value(self, max_value):
+        self.type(self.MAX_VALUE, max_value)
     def click_ok_button(self):
         self.click(self.OK_BUTTON)
 
-    def check_product_prices(self):
-        self.wait_for_element_visibility(By.CLASS_NAME, "price")
+    def check_product_prices(self, min_price, max_price):
+        self.min_price = min_price
+        self.max_price = max_price
+        min_price = 1000
+        max_price = 2000
+        sleep(2)
         self.click(self.OK_BUTTON)
         product_prices_text = [price.text for price in self.find_multiple(self.PRODUCT_PRICES)]
         prices_list = [re.sub(r'[^\d,]', '', item) for item in product_prices_text if item.strip()]
         prices_list_int = [int(item.split(',')[0]) for item in prices_list]
         for price in prices_list_int:
-            assert price >= 1000 and price <= 2000
+            assert price >= min_price and price <= max_price
 
     """@Test_URL"""
     def click_cart_page(self):

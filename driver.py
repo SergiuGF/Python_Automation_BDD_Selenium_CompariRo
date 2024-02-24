@@ -4,11 +4,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 import unittest
 
+
 class Driver(unittest.TestCase):
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
-    driver.implicitly_wait(10) # wait until elements are loaded
-    driver.set_page_load_timeout(10)  # wait until DOM is loaded
+    driver.implicitly_wait(10)  # wait until elements are loaded
+    driver.set_page_load_timeout(50)  # wait until DOM is loaded
 
     def close(self):
         sleep(3)

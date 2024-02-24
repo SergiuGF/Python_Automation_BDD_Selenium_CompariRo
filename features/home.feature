@@ -12,12 +12,12 @@ Feature: Test the functionality of the Home Page and of the associated functions
 
    @Filter
    Scenario: Check the functionality of the Filter feature
-     When I click on the "Telefoane mobile" - under "Electronice" tab
-     When I click "Valori individuale" - under "Pret" tab
-     When I set the min value at 1000
-     When I set the max value at 2000
-     When I click "ok" button - under "Pret" tab
-     Then All products displayed are between 1000 and 2000 lei
+     When I click on the Telefoane mobile - under Electronice tab
+     When I click Valori individuale - under Pret tab
+     When I set the min value at "1000"
+     When I set the max value at "2000"
+     When I click ok button - under Pret tab
+     Then All products displayed are between "1000" and "2000" lei
 
     @Test_URL
    Scenario: Check the functionality of the redirection to the Cart Page "https://checkout.compari.ro/"
@@ -26,7 +26,7 @@ Feature: Test the functionality of the Home Page and of the associated functions
 
     @Comparatie
    Scenario: Check the functionality of the "Comparatie" button
-      When I click on the "Aparat foto" button
-      When I click "Comparare" checkbox
-      When I click on the "Comparatie" button
+      When I click on the Aparat foto button
+      When I click Comparare checkbox
+      When I click on the Comparatie button
       Then The selected product is displayed

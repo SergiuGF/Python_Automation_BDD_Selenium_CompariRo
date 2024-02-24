@@ -1,24 +1,28 @@
-Framework-ul reprezinta un plan de testare de tip BDD (behavior-driven development), a platformei de comparare a preturilor, Compari.ro.
-Limbaj folosit: Python – vers. 3.11 | IDE: PyCharm vers. 2023.2
-Librarii folosite:  
-- Librariile standard PyCharm (preinstalate);
-- Selenium vers. 4.14.0 (folosita pentru automatizarea unor actiuni intr-un browser);
-- Webdriver-manager vers. 4.0.1 (folosita pentru facilitarea gestionarii automate a drive-relor necesare pentru Selenium); 
-- Behave vers. 1.2.6. (librarie specifica BDD folosita pentru scrierea testelor intr-un limbaj natural, alaturi de Gherkin);
-- Behave-html-formatter vers. 0.9.10 (folosita pentru formatarea fisierelor behave.ini in fisiere HTML);
-- Gherkin Language (folosita pentru scrierea testelor intr-un limbaj natural - alaturi de Behave - pe intelesul persoanelor care nu au cunostinte tehnice).
-Medote folosite: 
-- Modulul Random (importat din Python; ofera functionalitati pentru generarea de numere aleatoare);
-- Modul Re (importat din Python; ofera functionalitati pentru cautarea, manipularea si procesarea textului)
-- Functia Sleep (importat din modul Time – Python; utilizata pentru a introduce o intarziere in executia codului pentru o perioada specificata de timp).
-Instalare si rulare proiect: 
-- se acceseaza link-ul de github aferent proiectului;
-- se acceseaza butonul                 si se descarca prin accesarea butonului                   ;
-- se dezarhiveaza fisierul descarcat                            ;
-- se deschide proiectul in IDE-ului Pycharm;
-- se instaleaza libraria Selenium utilizand comada ”pip install selenium” in terminalul IDE-ului Pycharm;
-- se instaleaza libraria Webdriver_manager utilizand comada ”pip install webdriver_manager” in terminalul IDE-ului Pycharm;
- - se instaleaza libraria Behave-html-formatter utilizand comada ”pip install behave-html-formatter” in terminalul IDE-ului Pycharm;
-- se excuta comanda ”behave -f html -o raport-testare_finala_16.16.2023.html” si se asteapta rularea testului;
-- se deschide rapotul generat ”raport-testare_finala_16.16.2023.html”
- intr-un browser dorit pentru a vizualiza rezultatelor testelor.
+The framework represents a BDD (Behavior-Driven Development) testing plan for the price comparison platform, Compari.ro.
+
+Language used: Python – ver. 3.11 | IDE: PyCharm ver. 2023.2
+
+Libraries used:
+
+PyCharm standard libraries (pre-installed);
+Selenium ver. 4.14.0 (used for automating actions in a browser);
+Webdriver-manager ver. 4.0.1 (used to facilitate automated management of drivers needed for Selenium);
+Behave ver. 1.2.6. (BDD-specific library used for writing tests in natural language, along with Gherkin);
+Behave-html-formatter ver. 0.9.10 (used for formatting behave.ini files into HTML files);
+Gherkin Language (used for writing tests in natural language - alongside Behave - understandable to individuals without technical knowledge).
+Methods used:
+
+Random Module (imported from Python; provides functionalities for generating random numbers);
+Re Module (imported from Python; provides functionalities for searching, manipulating, and processing text);
+Sleep Function (imported from the Time module in Python; used to introduce a delay in the code execution for a specified period of time).
+Installation and project execution:
+
+Access the GitHub link related to the project;
+Click the button "<> Code" and download by accessing the button "Download ZIP" ;
+Unzip the downloaded file;
+Open the project in PyCharm IDE;
+Install the Selenium library using the command "pip install selenium" in the PyCharm IDE terminal;
+Install the Webdriver_manager library using the command "pip install webdriver_manager" in the PyCharm IDE terminal;
+Install the Behave-html-formatter library using the command "pip install behave-html-formatter" in the PyCharm IDE terminal;
+Execute the command "behave -f html -o report-testing_final_16.16.2023.html" and wait for the test to run;
+Open the generated report "report-testing_final_16.16.2023.html" in a desired browser to view the test results.

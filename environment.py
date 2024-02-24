@@ -5,6 +5,7 @@ from pages.home_page import HomePage
 from pages.cart_page import CarPage
 
 def before_all(context):
+    context.driver = Driver()
     context.browser = Driver()
     context.login_page = LoginPage()
     context.register_page = RegisterPage()

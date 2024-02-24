@@ -5,13 +5,13 @@ def step_impl(context):
     context.register_page.navigate_to_register_page()
 
 """@Register1"""
-@when('I set a new email')
+@when('User inserts random email')
 def step_impl(context):
     context.register_page.set_random_email()
-@when('I set password as "{text}"')
-def step_impl(context, text):
-    context.register_page.set_password(text)
-@when('I click register button')
+@when('User inserts a password "{password}"')
+def step_impl(context, password):
+    context.register_page.set_password(password)
+@when('User clicks on the register button')
 def step_impl(context):
     context.register_page.click_register_button()
 @then('Success message is displayed')
@@ -19,32 +19,18 @@ def step_impl(context):
     context.register_page.is_success_message_displayed()
 
 """@Register2"""
-@when("I insert ' ' in the mail input")
+@when('User inserts empty email')
 def step_impl(context):
     context.register_page.set_empty_email(" ")
-@when('I click register button - Scenario 2')
-def step_impl(context):
-    context.register_page.click_register_button()
-@then('Email error message is displayed')
+@then('Error message is displayed')
 def step_impl(context):
     context.register_page.error_message_is_displayed()
-@then('Email error text contains "Completarea campului este obligatorie!" message')
-def step_impl(context):
-    context.register_page.is_error_message_correct()
+@then('Error message contains "{empty_error_text}"')
+def step_impl(context, empty_error_text):
+    context.register_page.is_reg_error_message_correct(empty_error_text)
 
 """@Register3"""
-@when("I set a new email - Scenario 3")
-def step_impl(context):
-    context.register_page.set_random_email()
-@when("I insert ' ' in the password input")
+
+@when('User inserts empty password " "')
 def step_impl(context):
     context.register_page.set_empty_password(' ')
-@when("I click register button - Scenario 3")
-def step_impl(context):
-    context.register_page.click_register_button()
-@then('Password error message is displayed')
-def step_impl(context):
-    context.register_page.error_message_is_displayed()
-@then('Password error text contains "Completarea campului este obligatorie!" message')
-def step_impl(context):
-    context.register_page.is_error_message_correct()
