@@ -26,7 +26,7 @@ The project has a structure consisting of a series of files and directories. We 
 
 ### SCREENSHOTS WITH THE CODE
 
-<img src="screenshots/cart.feature.PNG" width="900" height="500">
+<img src="screenshots/cart.feature.png" width="900" height="500">
 
 <img src="screenshots/home.feature.PNG" width="900" height="500">
 
