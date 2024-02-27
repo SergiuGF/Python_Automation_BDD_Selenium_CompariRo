@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 import unittest
 
-
 class Driver(unittest.TestCase):
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)

@@ -30,7 +30,6 @@ def step_impl(context, empty_error_text):
     context.register_page.is_reg_error_message_correct(empty_error_text)
 
 """@Register3"""
-
 @when('User inserts empty password " "')
 def step_impl(context):
     context.register_page.set_empty_password(' ')

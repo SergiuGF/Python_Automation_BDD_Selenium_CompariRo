@@ -4,7 +4,6 @@ from behave import *
 def step_impl(context):
     context.login_page.navigate_to_login_page()
 
-
 """Login1"""
 @when('User inserts email "{email}" in the email input')
 def step_impl(context, email):
@@ -24,7 +23,6 @@ def step_impl(context, error_msg_text):
     context.login_page.is_log_error_message_correct(error_msg_text)
 
 """@Login2"""
-
 @then('I am redirected to account page "{account_page}"')
 def step_impl(context, account_page):
     context.login_page.test_url_account(account_page)

@@ -38,7 +38,6 @@ class RegisterPage(BasePage):
     def is_reg_error_message_correct(self, empty_error_text):
         assert empty_error_text in self.get_text(self.REG_MESSAGE_ERROR)
 
-
     """@Register3"""
     # first step is the same as in the previous scenario - set_random_email
     def set_empty_password(self, text):
