@@ -28,35 +28,35 @@ The project has a structure consisting of a series of files and directories. We 
 
 <img src="screenshots/cart.feature.png" width="900" height="500">
 
-<img src="screenshots/home.feature.PNG" width="900" height="500">
+<img src="screenshots/home.feature.png" width="900" height="500">
 
-<img src="screenshots/login.feature.PNG" width="900" height="500">
+<img src="screenshots/login.feature.png" width="900" height="500">
 
 
-<img src="screenshots/register.feature.PNG" width="900" height="500">
-<img src="screenshots/driver.PNG" width="900" height="500">
-<img src="screenshots/environment.PNG" width="900" height="500">
+<img src="screenshots/register.feature.png" width="900" height="500">
+<img src="screenshots/driver.png" width="900" height="500">
+<img src="screenshots/environment.png" width="900" height="500">
 
-<img src="screenshots/base_page1.PNG" width="900" height="500">
-<img src="screenshots/base_page2.PNG" width="900" height="500">
-<img src="screenshots/cart_page1.PNG" width="900" height="500">
-<img src="screenshots/cart_page2.PNG" width="900" height="500">
-<img src="screenshots/home_page1.PNG" width="900" height="500">
-<img src="screenshots/home_page2.PNG" width="900" height="500">
-<img src="screenshots/home_page3.PNG" width="900" height="500">
-<img src="screenshots/home_page4.PNG" width="900" height="500">
-<img src="screenshots/login_page1.PNG" width="900" height="500">
-<img src="screenshots/login_page2.PNG" width="900" height="500">
-<img src="screenshots/register_page1.PNG" width="900" height="500">
-<img src="screenshots/register_page2.PNG" width="900" height="500">
-<img src="screenshots/cart_steps.PNG" width="900" height="500">
-<img src="screenshots/home_steps1.PNG" width="900" height="500">
-<img src="screenshots/home_steps2.PNG" width="900" height="500">
-<img src="screenshots/home_steps3.PNG" width="900" height="500">
-<img src="screenshots/login_steps1.PNG" width="900" height="500">
-<img src="screenshots/login_steps2.PNG" width="900" height="500">
-<img src="screenshots/register_steps1.PNG" width="900" height="500">
-<img src="screenshots/register_steps2.PNG" width="900" height="500">
+<img src="screenshots/base_page1.png" width="900" height="500">
+<img src="screenshots/base_page2.png" width="900" height="500">
+<img src="screenshots/cart_page1.png" width="900" height="500">
+<img src="screenshots/cart_page2.png" width="900" height="500">
+<img src="screenshots/home_page1.png" width="900" height="500">
+<img src="screenshots/home_page2.png" width="900" height="500">
+<img src="screenshots/home_page3.png" width="900" height="500">
+<img src="screenshots/home_page4.png" width="900" height="500">
+<img src="screenshots/login_page1.png" width="900" height="500">
+<img src="screenshots/login_page2.png" width="900" height="500">
+<img src="screenshots/register_page1.png" width="900" height="500">
+<img src="screenshots/register_page2.png" width="900" height="500">
+<img src="screenshots/cart_steps.png" width="900" height="500">
+<img src="screenshots/home_steps1.png" width="900" height="500">
+<img src="screenshots/home_steps2.png" width="900" height="500">
+<img src="screenshots/home_steps3.png" width="900" height="500">
+<img src="screenshots/login_steps1.png" width="900" height="500">
+<img src="screenshots/login_steps2.png" width="900" height="500">
+<img src="screenshots/register_steps1.png" width="900" height="500">
+<img src="screenshots/register_steps2.png" width="900" height="500">
 
 ### SCENARIOS
 
@@ -71,8 +71,8 @@ Test scenarios chosen for evaluation include:
 
 These scenarios cover a variety of situations to ensure that the key functionalities of the platform are tested exhaustively and that errors can be identified and handled accordingly.
 
-<img src="screenshots/report1.PNG" width="900" height="500">
-<img src="screenshots/report2.PNG" width="900" height="500">
-<img src="screenshots/report3.PNG" width="900" height="500">
-<img src="screenshots/report4.PNG" width="900" height="500">
-<img src="screenshots/report5.PNG" width="900" height="500">
+<img src="screenshots/report1.png" width="900" height="500">
+<img src="screenshots/report2.png" width="900" height="500">
+<img src="screenshots/report3.png" width="900" height="500">
+<img src="screenshots/report4.png" width="900" height="500">
+<img src="screenshots/report5.png" width="900" height="500">
